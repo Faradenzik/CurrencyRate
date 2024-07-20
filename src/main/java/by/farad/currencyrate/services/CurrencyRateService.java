@@ -15,9 +15,9 @@ public class CurrencyRateService {
 
     @Autowired
     private CurrencyRateRepository currencyRateRepository;
-
     private final WebClient webClient = WebClient.create("https://www.nbrb.by/api/exrates");
 
+    // getting list of currencies
     public boolean fetchAndSaveRatesByDate(LocalDate date) {
         try {
             List<CurrencyRate> period0Rates = webClient.get()
@@ -41,6 +41,7 @@ public class CurrencyRateService {
         }
     }
 
+    // getting currency info by date and code
     public CurrencyRate getRateByDateAndCurAbb(LocalDate date, String currencyCode) {
         return currencyRateRepository.findByDateAndCurAbb(date, currencyCode).orElse(null);
     }
