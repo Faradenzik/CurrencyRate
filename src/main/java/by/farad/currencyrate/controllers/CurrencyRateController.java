@@ -23,4 +23,11 @@ public class CurrencyRateController {
         boolean success = currencyRateService.fetchAndSaveRatesByDate(date);
         return success ? ResponseEntity.ok("Курсы валют загружены") : ResponseEntity.status(500).body("Ошибка при загрузке курсов");
     }
+
+    @GetMapping("/getRate")
+    public ResponseEntity<?> getRate(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,
+                                     @RequestParam String currencyCode) {
+        CurrencyRate rate = currencyRateService.getRateByDateAndCurAbb(date, currencyCode);
+        return rate != null ? ResponseEntity.ok(rate) : ResponseEntity.status(HttpStatus.NOT_FOUND).body("Курс валюты не найден на указанную дату");
+    }
 }
