@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "39d1237f-cd19-4b92-b3b4-475d84788888",
+		"name": "Bank API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37049001"
+	},
+	"item": [
+		{
+			"name": "LoadRates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/loadRates?date=2024-07-16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loadRates"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-07-16",
+							"description": "Дата для получения информации"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetRate By Date&Code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getRate?date=2024-07-16&currencyCode=USD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getRate"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-07-16"
+						},
+						{
+							"key": "currencyCode",
+							"value": "USD"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

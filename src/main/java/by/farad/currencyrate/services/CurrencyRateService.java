@@ -3,10 +3,8 @@ package by.farad.currencyrate.services;
 import by.farad.currencyrate.models.CurrencyRate;
 import by.farad.currencyrate.repositories.CurrencyRateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Flux;
 
 import java.time.LocalDate;
 import java.util.List;
