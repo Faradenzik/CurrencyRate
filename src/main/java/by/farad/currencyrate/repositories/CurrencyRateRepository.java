@@ -10,4 +10,6 @@ import java.util.Optional;
 @Repository
 public interface CurrencyRateRepository extends JpaRepository<CurrencyRate, Long> {
     Optional<CurrencyRate> findByDateAndCurAbb(LocalDate date, String cur_abbreviation);
+
+    boolean existsByDateAndCurAbb(LocalDate date, String currencyCode);
 }
